@@ -6,9 +6,8 @@
       <class name="PracticeE2E.testClasses.Test1">
         <methods>
           <include name="systemSetup"/>
-          <include name="resetPw"/>
           <include name="close"/>
-          <include name="login"/>
+          <include name="supportClick"/>
         </methods>
       </class> <!-- PracticeE2E.testClasses.Test1 -->
     </classes>

@@ -15,8 +15,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class commons {
 	
 	static WebDriver driver;
-	By profileBtn = By.xpath("//p[@class='oxd-userdropdown-name']");
-	By logoutBtn = By.xpath("//a[@href='/web/index.php/auth/logout']");
 
 	public WebDriver setWebDriver(String browserType, String url) {
 		if(browserType.contains("chrome")) {
@@ -45,13 +43,10 @@ public class commons {
 			WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(waitTime));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
-	public void logout() {
-		driver.findElement(profileBtn).click();
-		driver.findElement(logoutBtn).click();
-	}
+	
 	
 	public void closeSession() {
-		this.driver.quit();
+		driver.quit();
 	}
 	public commons(WebDriver driver) {
 		this.driver=driver;

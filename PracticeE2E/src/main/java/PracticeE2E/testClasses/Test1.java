@@ -37,18 +37,19 @@ public class Test1{
 		public void login() {
 			login.login(un, pw);
 			hp.homeValidation();
+			hp.logout();
 		}
 		
-		@Test
-		public void getInfo() {
-			
+		@Test(priority=2)
+		public void supportClick() {
+			login.login(un, pw);
+			hp.clickSupport();
+			hp.logout();
 		}
 		
 		@AfterTest
-		public void close() {
-			common.logout();
+		public void close(){
 			common.closeSession();
 		}
 	
 	}
-	
